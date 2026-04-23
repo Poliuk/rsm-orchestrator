@@ -120,3 +120,7 @@ Claude will read `SKILL.md` and walk through the right workflow based on what yo
 ```
 
 Every workflow doc is designed to be read in full before execution — not recalled from memory. If you edit one, keep it self-contained.
+
+## Credits
+
+Thanks to [@luisherranz](https://github.com/luisherranz) for sharing his original orchestrator, which this one is adapted from — and for his ongoing work on [Radical Pipelines](https://github.com/Automattic/radical-pipelines), a broader take on coordinating AI development work.
