@@ -10,8 +10,10 @@ The orchestrator coordinates development work between the project owner and AI a
 
 ## Conventions
 
-- **Source of truth:** work is tracked as Linear tickets in the RSM (Radical Speed Month) team's project. GitHub is used only for the PR (branch push, review, merge).
-- **Ticket ID:** RSM tickets have IDs like `RSM-123`; `<ticket-number>` refers to the numeric part (`123`).
+- **Source of truth:** work is tracked as Linear tickets. GitHub is used only for the PR (branch push, review, merge).
+- **Linear team:** `RSM` (Radical Speed Month) — the team prefix used for ticket IDs.
+- **Linear project:** [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) — the only project this orchestrator operates on. All new tickets go here; resume/listing/search MUST be scoped to this project. Ignore other projects under the RSM team.
+- **Ticket ID:** Tickets have IDs like `RSM-123` (team-scoped, not project-scoped); `<ticket-number>` refers to the numeric part (`123`).
 - **Issue slug:** `rsm-<ticket-number>-<short-description>` (e.g. `rsm-123-dark-mode`) — referred to as `<issue-slug>` in all reference docs. Used for the git branch, worktree name, and folder name.
 - **Branch naming:** `<issue-slug>` (e.g. `rsm-123-dark-mode`) — matches Linear's branch convention (lowercase team prefix + ticket number + description). `EnterWorktree` creates the branch with a `worktree-` prefix by default; rename it to the bare slug right after entering: `git -C .claude/worktrees/<issue-slug> branch -m worktree-<issue-slug> <issue-slug>`.
 - **Worktrees:** all work happens in `.claude/worktrees/<issue-slug>` (managed by `EnterWorktree`). Never work in the main directory.

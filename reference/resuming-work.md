@@ -4,7 +4,7 @@ For picking up a ticket where a previous orchestrator session stopped, stalled, 
 
 ## Detect state (do all before acting)
 
-1. Ticket + labels: get the Linear ticket (via the Linear MCP) by ID `RSM-<N>`
+1. Ticket + labels: get the Linear ticket (via the Linear MCP) by ID `RSM-<N>`. Confirm it belongs to the `Bring Data Liberation into Studio Code` project — if it's in a different RSM project, stop and check with the owner; this orchestrator does not operate outside that project.
 2. Worktree: `ls .claude/worktrees/ | grep rsm-<N>-`
 3. Branch: `git branch -a | grep rsm-<N>-`
 4. Issue folder: `ls issues/<issue-slug>/`

@@ -1,12 +1,12 @@
 # rsm-orchestrator
 
-A Claude Code skill that coordinates multi-agent development work — from Linear ticket to merged GitHub PR. Built for Automattic's **Radical Speed Month (RSM)**, driving code changes into the [Studio](https://github.com/automattic/studio) repo.
+A Claude Code skill that coordinates multi-agent development work — from Linear ticket to merged GitHub PR. Built for Automattic's **Radical Speed Month (RSM)** initiative, specifically the [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) project, driving code changes into the [Studio](https://github.com/automattic/studio) repo.
 
 ## What it does
 
 You describe what you want built. The orchestrator (running inside Claude Code) then:
 
-1. Creates a **Linear ticket** in the RSM team with a simple prompt
+1. Creates a **Linear ticket** in the RSM team's _Bring Data Liberation into Studio Code_ project with a simple prompt
 2. Sets up an isolated **git worktree** in the Studio repo
 3. Launches one or more **Claude agents** — either a single worker or a coordinated team with specialist roles
 4. Monitors progress, handles review iterations, and recovers from stalls
@@ -57,7 +57,9 @@ Each team configuration has its own reference doc under `reference/teams/` descr
 
 | | |
 |---|---|
-| **Ticket ID** | `RSM-<N>` (Linear) |
+| **Linear team** | `RSM` |
+| **Linear project** | [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) |
+| **Ticket ID** | `RSM-<N>` (team-scoped, not project-scoped) |
 | **Issue slug** | `rsm-<N>-<short-description>` (e.g. `rsm-123-dark-mode`) |
 | **Branch** | same as slug, pushed to `automattic/studio` |
 | **Worktree** | `.claude/worktrees/<issue-slug>/` (inside the Studio clone) |
@@ -67,7 +69,7 @@ Each team configuration has its own reference doc under `reference/teams/` descr
 ## Requirements
 
 - [Claude Code](https://claude.com/claude-code) (opus-class model recommended — the teams all specify `opus`)
-- Linear MCP server configured and authenticated, with access to the RSM team
+- Linear MCP server configured and authenticated, with access to the RSM team and the _Bring Data Liberation into Studio Code_ project
 - GitHub CLI (`gh`) authenticated, with access to `automattic/studio`
 - A local clone of `automattic/studio` for worktrees and code changes
 - Node.js 22+ and `npm` (Studio's package manager)
