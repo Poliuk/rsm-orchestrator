@@ -2,13 +2,13 @@
 
 **Do NOT start automatically** — the owner and I review open Linear tickets together and agree which one to start.
 
-**Never change the team configuration.** The ticket label (`team:<config-name>` or `single-agent`) is the owner's decision. Always use the configuration specified in the label.
+**Never change the team configuration.** The mode in the ticket's `🤖 Orchestrator config` marker comment (`team:<config-name>` or `single-agent`) is the owner's decision. Always use the configuration specified there. If the marker comment is missing or unreadable, stop and ask the owner.
 
 **One active workflow per worktree.** A worktree can have either one single-agent or one team working on it — never both, and never two of either. If the current workflow needs to be replaced, follow `reference/multiple-attempts.md` to create a new worktree.
 
 ## Setup
 
-1. Read the Linear ticket and its labels (via the Linear MCP)
+1. Read the Linear ticket (via `get_issue`) and its comments (via `list_comments`). Find the `🤖 Orchestrator config` marker comment to recover `mode`. The current workflow state on the issue (`state.name`) tells you whether work has already started.
 2. Check for previous attempts: `git branch -a | grep 'rsm-<ticket-number>-'`. If any branches exist, report them to the owner before proceeding — follow `reference/multiple-attempts.md` to choose a versioned slug.
 3. Choose an `<issue-slug>`: `rsm-<ticket-number>-<short-description>` (e.g. `rsm-123-dark-mode`). This is used everywhere — git branch, worktree name, and folder name.
 4. Enter a worktree using `EnterWorktree` with `name` set to `<issue-slug>`. This creates (or re-enters) the worktree at `.claude/worktrees/<issue-slug>`. `EnterWorktree` creates the branch as `worktree-<issue-slug>` — immediately rename it to match the slug:
@@ -39,10 +39,10 @@
 
 ## Launch
 
-Proceed depending on the ticket label:
+Proceed depending on the `mode` from the marker comment:
 
-- **Team:** follow `reference/launching-a-team.md`
-- **Single agent:** follow `reference/launching-a-single-agent.md`
+- **`team:<config-name>`:** follow `reference/launching-a-team.md`
+- **`single-agent`:** follow `reference/launching-a-single-agent.md`
 
 ## After agents finish
 

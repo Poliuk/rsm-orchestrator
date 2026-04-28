@@ -6,7 +6,7 @@
 
 ## Launch
 
-1. Update the Linear ticket label: `single-agent` → `single-agent:active`
+1. Move the Linear ticket to **In Progress** via `save_issue` (look up the RSM team's `In Progress` state ID via `list_issue_statuses` if you don't already have it).
 2. **Post a start comment on the Linear ticket:**
    ```
    🤖 **Single agent started**
@@ -25,7 +25,7 @@
 
 ## After the agent finishes
 
-1. Update label: `single-agent:active` → `single-agent:done`
+1. Leave the Linear ticket in **In Progress** for now — final state transition (`Done` / `Cancelled`) happens in `reference/finishing-work.md` once the PR has merged or been abandoned.
 2. Review the agent's output
 3. **Post a completion comment on the Linear ticket:**
    ```

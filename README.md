@@ -64,7 +64,8 @@ Each team configuration has its own reference doc under `reference/teams/` descr
 | **Branch** | same as slug, pushed to `automattic/studio` |
 | **Worktree** | `.claude/worktrees/<issue-slug>/` (inside the Studio clone) |
 | **Issue folder** | `issues/<issue-slug>/` (committed alongside the code — holds prompt, spec, reviews, PR description, screenshots) |
-| **Linear labels** | `team:<config>`, `single-agent`, `*:active`, `*:done` |
+| **Mode marker** | first comment on the ticket: `🤖 Orchestrator config` with `mode: team:<config>` or `mode: single-agent` |
+| **Active/done** | tracked via Linear's native workflow state (`Todo` → `In Progress` → `Done`/`Cancelled`), not labels |
 
 ## Requirements
 
@@ -89,7 +90,7 @@ Claude will read `SKILL.md` and walk through the right workflow based on what yo
 
 1. **Describe the idea.** Rough is fine — the orchestrator will help you scope it.
 2. **Pick a mode.** Together you decide: single agent or team, and which team config.
-3. **Orchestrator creates the Linear ticket** with a short prompt + label.
+3. **Orchestrator creates the Linear ticket** with a short prompt + a marker comment recording the chosen mode.
 4. **You pick which ticket to start.** Orchestrator sets up the worktree and spawns agents.
 5. **Agents work in the background.** A health-check loop fires every 15 minutes to detect stalls.
 6. **Review the PR** when it opens. Small changes → orchestrator tweaks directly; larger → `review` team.

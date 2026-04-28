@@ -1,10 +1,13 @@
 # Resuming Paused or Stopped Work
 
-For picking up a ticket where a previous orchestrator session stopped, stalled, or was interrupted. The worktree, commits, team file, and Linear labels may all exist — the job is to diagnose where the flow stopped and continue from the right point through to completion.
+For picking up a ticket where a previous orchestrator session stopped, stalled, or was interrupted. The worktree, commits, team file, marker comment, and Linear workflow state may all exist — the job is to diagnose where the flow stopped and continue from the right point through to completion.
 
 ## Detect state (do all before acting)
 
-1. Ticket + labels: get the Linear ticket (via the Linear MCP) by ID `RSM-<N>`. Confirm it belongs to the `Bring Data Liberation into Studio Code` project — if it's in a different RSM project, stop and check with the owner; this orchestrator does not operate outside that project.
+1. Ticket + config + workflow state: get the Linear ticket (via `get_issue`) by ID `RSM-<N>` and read its comments (via `list_comments`).
+   - Confirm it belongs to the `Bring Data Liberation into Studio Code` project — if it's in a different RSM project, stop and check with the owner.
+   - Find the `🤖 Orchestrator config` marker comment to recover `mode`. If it's missing or unreadable, stop and ask the owner.
+   - Read the issue's `state.name` — `In Progress` means a previous session got past launch; `Todo`/backlog means launch never happened.
 2. Worktree: `ls .claude/worktrees/ | grep rsm-<N>-`
 3. Branch: `git branch -a | grep rsm-<N>-`
 4. Issue folder: `ls issues/<issue-slug>/`
@@ -50,7 +53,7 @@ Always post this, regardless of whether the original start comment was posted:
 
 ## Back-fill other housekeeping
 
-- Labels match the current state? (e.g. `team:active`/`team:done`, `single-agent:active`/`single-agent:done`).
+- Linear workflow state matches reality? If the ticket is still in `Todo`/backlog but the worktree and commits show launch already happened, move it to `In Progress` via `save_issue`.
 - Health monitoring running? Restart per `reference/health-monitoring.md`.
 
 ## Handle the existing team
