@@ -81,8 +81,14 @@ Each team configuration has its own reference doc under `reference/teams/` descr
    ```
    git clone https://github.com/Poliuk/rsm-orchestrator.git ~/.claude/skills/orchestrator
    ```
-2. Inside your local Studio clone, start Claude Code.
-3. Ask Claude to use the orchestrator: _"Use the orchestrator — here's my idea: …"_
+2. Install the bundled subagent definitions into your Claude Code agents directory. The team configurations spawn specialist agents by name (`research-lead`, `researcher`, `inquisitor`, `implementer`, etc.), and Claude Code only finds them if they live under `~/.claude/agents/`:
+   ```
+   mkdir -p ~/.claude/agents
+   cp ~/.claude/skills/orchestrator/agents/*.md ~/.claude/agents/
+   ```
+   Re-run the `cp` whenever you pull updates to this repo. (If you'd rather not duplicate files, symlink each one instead.)
+3. Inside your local Studio clone, start Claude Code.
+4. Ask Claude to use the orchestrator: _"Use the orchestrator — here's my idea: …"_
 
 Claude will read `SKILL.md` and walk through the right workflow based on what you ask for.
 
@@ -102,6 +108,18 @@ Claude will read `SKILL.md` and walk through the right workflow based on what yo
 .
 ├── SKILL.md                    ← Claude Code entry point; defines conventions + workflow table
 ├── README.md                   ← this file
+├── agents/                     ← subagent definitions (copy to ~/.claude/agents/ — see Setup)
+│   ├── research-lead.md
+│   ├── researcher.md
+│   ├── inquisitor.md
+│   ├── investigator.md
+│   ├── planner.md
+│   ├── implementer.md
+│   ├── documentator.md
+│   ├── spec-writer.md
+│   ├── spec-reviewer.md
+│   ├── doc-reviewer.md
+│   └── code-reviewer.md
 └── reference/
     ├── creating-issues.md      ← how to file a new Linear ticket
     ├── starting-work.md        ← setting up a worktree and launching agents
