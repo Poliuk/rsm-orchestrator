@@ -21,8 +21,8 @@ These rules apply across ALL steps:
 
 ### 1. Understand the Research Question
 
-1. Read all files in `issues/<branch-name>/` (prompt.md, etc.)
-2. Create `issues/<branch-name>/research-plan.md` with the research question and initial plan
+1. Read all files in `issues/<issue-slug>/` (prompt.md, etc.)
+2. Create `issues/<issue-slug>/research-plan.md` with the research question and initial plan
 
 ### 2. Plan Research Tasks
 
@@ -31,7 +31,7 @@ Break the investigation into **focused tasks** that researchers can execute inde
 - Be specific about what to investigate and what evidence to gather
 - Include what tools or approaches to use (codebase exploration, web research, building test pages, browser testing, etc.)
 
-Use `TodoWrite` to create the task list. This is your primary output — the orchestrator uses it to assign work to researchers.
+Use `TaskCreate` to create the task list. This is your primary output — the orchestrator uses it to assign work to researchers.
 
 ### 3. Evaluate Findings
 
@@ -49,7 +49,7 @@ Research is complete when:
 
 ### 4. Write Final Synthesis
 
-Write `issues/<branch-name>/research-report.md` with:
+Write `issues/<issue-slug>/research-report.md` with:
 
 - **Executive Summary**: Key findings and recommendation in 2-3 paragraphs
 - **Approaches Investigated**: For each approach:
@@ -60,7 +60,7 @@ Write `issues/<branch-name>/research-report.md` with:
 - **Recommendation**: Which approach (or combination) to use, and why
 - **Open Questions**: Anything that couldn't be resolved and needs further investigation
 
-Then write `issues/<branch-name>/PR-description.md` following the PR template at `.github/pull_request_template.md`.
+Then write `issues/<issue-slug>/PR-description.md` following the PR template at `.github/pull_request_template.md`.
 
 ### 5. Commit and Report
 

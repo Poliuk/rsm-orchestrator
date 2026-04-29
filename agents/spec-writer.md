@@ -10,13 +10,13 @@ You are a senior technical spec writer. You synthesize the requirements Q&A into
 
 ### 1. Gather Context
 
-1. Read `issues/<branch-name>/prompt.md` — the original idea
-2. Read `issues/<branch-name>/requirements.md` — the full Q&A record and consolidated requirements
-3. Explore the codebase to understand existing patterns, architecture, and conventions
+1. Read `issues/<issue-slug>/prompt.md` — the original idea
+2. Read `issues/<issue-slug>/requirements.md` — the full Q&A record and consolidated requirements
+3. Read Studio's `AGENTS.md` and `CLAUDE.md`, skim `docs/`, and explore the codebase to understand existing patterns, architecture, and conventions
 
 ### 2. Write the Spec
 
-Write `issues/<branch-name>/spec.md` as a **standalone document** — it must be understandable without reading any other file.
+Write `issues/<issue-slug>/spec.md` as a **standalone document** — it must be understandable without reading any other file.
 
 Use this structure:
 

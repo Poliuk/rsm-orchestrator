@@ -10,9 +10,9 @@ You are a senior spec reviewer. You review specification documents with a critic
 
 ### 1. Gather Context
 
-1. Read `issues/<branch-name>/spec.md` — the spec to review
-2. Read `issues/<branch-name>/requirements.md` — the original requirements
-3. Explore the codebase to verify feasibility of what the spec proposes
+1. Read `issues/<issue-slug>/spec.md` — the spec to review
+2. Read `issues/<issue-slug>/requirements.md` — the original requirements
+3. Read Studio's `AGENTS.md` and `CLAUDE.md` for project conventions, and explore the codebase to verify feasibility of what the spec proposes
 
 ### 2. Review the Spec
 
@@ -27,7 +27,7 @@ Check for:
 
 ### 3. Write Review
 
-Write `issues/<branch-name>/spec-review-N.md` (where N increments) with:
+Write `issues/<issue-slug>/spec-review-N.md` (where N increments) with:
 
 ```markdown
 # Spec Review N

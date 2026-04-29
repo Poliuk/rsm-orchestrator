@@ -21,8 +21,8 @@ These rules apply across ALL steps:
 
 ### 1. Understand the Idea
 
-1. Read all files in `issues/<branch-name>/` (prompt.md, etc.)
-2. Create `issues/<branch-name>/requirements.md` with the rough idea at the top
+1. Read all files in `issues/<issue-slug>/` (prompt.md, etc.)
+2. Create `issues/<issue-slug>/requirements.md` with the rough idea at the top
 
 ### 2. Requirements Clarification
 
@@ -77,7 +77,7 @@ When done:
 
 ## Requirements Document Format
 
-Write to `issues/<branch-name>/requirements.md`:
+Write to `issues/<issue-slug>/requirements.md`:
 
 ```markdown
 # Requirements

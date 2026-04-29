@@ -14,8 +14,8 @@ Use all available tools as needed:
 
 - **Codebase**: Read source files, grep for code/types/functions, check tests, read reference docs
 - **Web**: Search the web for documentation, blog posts, API references, forum discussions
-- **Experiments**: Build test pages, use `agent-browser` to verify behavior, run scripts
-- **Browser testing**: Open pages, interact with them, take screenshots as evidence
+- **Experiments**: Run the app (`npm start`), write a throwaway Playwright test against the Electron build, run scripts, or modify code locally to test a hypothesis
+- **App verification**: Drive Studio manually or via Playwright, take screenshots as evidence
 
 Choose the tools that fit the task. Not every investigation needs all tools.
 
