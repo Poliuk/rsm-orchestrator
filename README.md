@@ -1,6 +1,6 @@
 # rsm-orchestrator
 
-A Claude Code skill that coordinates multi-agent development work — from Linear ticket to merged GitHub PR. Built for Automattic's **Radical Speed Month (RSM)** initiative, specifically the [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) project, driving code changes into the [Studio](https://github.com/automattic/studio) repo.
+A Claude Code skill that coordinates multi-agent development work — from Linear ticket to merged GitHub PR. Built for Automattic's **Radical Speed Month (RSM)** initiative, specifically the [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) project, driving code changes into the [Studio](https://github.com/automattic/studio) repo — **CLI side only** (`apps/cli/`), and almost always the `studio code` command. The Electron app at `apps/studio/` is out of scope.
 
 ## What it does
 
@@ -59,6 +59,7 @@ Each team configuration has its own reference doc under `reference/teams/` descr
 |---|---|
 | **Linear team** | `RSM` |
 | **Linear project** | [Bring Data Liberation into Studio Code](https://linear.app/a8c/project/bring-data-liberation-into-studio-code-8e53bd986fcc) |
+| **Code scope** | `apps/cli/` only (workspace `wp-studio`, binary `studio`) — usually the `studio code` command at `apps/cli/commands/ai/index.ts`. The Electron app at `apps/studio/` is out of scope. |
 | **Ticket ID** | `RSM-<N>` (team-scoped, not project-scoped) |
 | **Issue slug** | `rsm-<N>-<short-description>` (e.g. `rsm-123-dark-mode`) |
 | **Branch** | same as slug, pushed to `automattic/studio` |
